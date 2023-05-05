@@ -33,8 +33,6 @@ body {
 }
 
 .card {
-  width: 100%;
-  height: 500px;
   background: white;
   transform: translateY(-30px);
   border-radius: 20px;
@@ -45,7 +43,7 @@ body {
 }
 
 .headers-information {
-  width: 100%;
+  padding: 20px;
   height: 100%;
   display: flex;
   color: white;
@@ -54,8 +52,10 @@ body {
 
 .text-title .name {
   font-size: 25px;
+  text-transform: uppercase;
 }
 .text-title .position {
+  font-style: italic;
   margin-top: 20px;
   font-size: 20px;
 }
@@ -69,7 +69,30 @@ body {
   height: 250px;
   width: 250px;
   border-radius: 50%;
+  border: solid 5px #34495e;
   object-fit: cover;
+}
+
+.card-details {
+  height: 100%;
+  padding: 20px;
+}
+.work-detail {
+  margin-bottom: 15px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.company-name {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+.work-position {
+  color: gray;
+}
+
+.work-detail p {
+  color: #34495e;
 }
 
 @media screen and (max-width: 500px) {
