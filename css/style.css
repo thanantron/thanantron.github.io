@@ -15,7 +15,7 @@ body {
 .container {
   height: 100%;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .headers {
@@ -31,11 +31,31 @@ body {
     rgba(46, 85, 93, 1) 100%
   );
 }
+.footer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    140deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(46, 85, 93, 1) 100%
+  );
+}
 
 .card {
   background: white;
   transform: translateY(-30px);
   border-radius: 20px;
+}
+
+.card-detail {
+  background: white;
+  border-radius: 20px;
+  transform: translateY(-20px);
+  padding: 20px;
 }
 
 .grid-6 {
@@ -92,7 +112,13 @@ body {
 }
 
 .work-detail p {
-  color: #34495e;
+  color: gray;
+}
+
+.skil-detail img {
+  margin-right: 15px;
+  height: 50px;
+  object-fit: fill;
 }
 
 @media screen and (max-width: 500px) {
