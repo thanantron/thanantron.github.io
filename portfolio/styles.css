@@ -86,14 +86,14 @@ body::before {
 
 .cpu-bg {
   position: fixed;
-  inset: auto -10vw 6vh auto;
-  width: min(980px, 84vw);
+  inset: auto -15vw 9vh auto;
+  width: min(720px, 68vw);
   aspect-ratio: 2 / 1;
   z-index: 0;
   pointer-events: none;
   color: rgba(34,211,238,.36);
-  opacity: .32;
-  filter: drop-shadow(0 0 26px rgba(34,211,238,.16));
+  opacity: .22;
+  filter: drop-shadow(0 0 22px rgba(34,211,238,.12));
   transform: translate3d(calc(var(--bg-x) * -1.4), calc(var(--bg-y) * -1.2), 0) rotate(-7deg);
   transform-origin: 70% 50%;
   mix-blend-mode: screen;
@@ -110,14 +110,14 @@ body::before {
 .cpu-lines path {
   stroke-dasharray: 2 8;
   stroke-linecap: round;
-  opacity: .72;
+  opacity: .58;
   animation: cpuLineDrift 18s linear infinite;
 }
-.cpu-lines path:nth-child(even) { animation-direction: reverse; opacity: .46; }
+.cpu-lines path:nth-child(even) { animation-direction: reverse; opacity: .34; }
 .cpu-trace {
   offset-anchor: 10px 0;
   animation: cpuTraceFlow 6s cubic-bezier(.75,-.01,0,.99) infinite;
-  opacity: .74;
+  opacity: .58;
 }
 .cpu-line-1 { offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30"); animation-delay: .4s; animation-duration: 5.2s; }
 .cpu-line-2 { offset-path: path("M 180 10 h -69.7 q -5 0 -5 5 v 30"); animation-delay: 2.3s; animation-duration: 4.6s; }
@@ -135,7 +135,7 @@ body::before {
   fill: url(#cpu-core-fill);
   stroke: rgba(34,211,238,.42);
   stroke-width: .45;
-  filter: drop-shadow(0 0 7px rgba(34,211,238,.38));
+  filter: drop-shadow(0 0 5px rgba(34,211,238,.30));
 }
 .cpu-core text {
   font-family: var(--mono);
@@ -698,7 +698,7 @@ section { position: relative; padding: 130px 0; }
   .avatar { width: 250px; height: 250px; }
   .orbit-ring.r1 { width: 330px; height: 330px; }
   .orbit-ring.r2 { width: 290px; height: 290px; }
-  .cpu-bg { width: 620px; max-width: none; right: -300px; bottom: 18vh; opacity: .18; }
+  .cpu-bg { width: 440px; max-width: none; right: -250px; bottom: 20vh; opacity: .13; }
   .dock { gap: 2px; padding: 7px; }
   .dock a { width: 40px; height: 40px; }
   .avail { right: 50%; bottom: 7%; translate: 50% 0; min-width: 172px; }
@@ -738,7 +738,7 @@ html[data-theme="light"] .grid-overlay {
 }
 html[data-theme="light"] .cpu-bg {
   color: rgba(8,145,178,.32);
-  opacity: .24;
+  opacity: .16;
   filter: drop-shadow(0 0 22px rgba(8,145,178,.12));
   mix-blend-mode: multiply;
 }
