@@ -50,12 +50,12 @@ body {
 }
 .page {
   width: 210mm;
-  min-height: 297mm;
   margin: 0 auto 32px;
   padding: 15mm 17mm;
   background: var(--paper);
   box-shadow: 0 18px 48px rgba(20, 32, 48, .18);
 }
+.sheet { min-height: 0; }
 .header {
   border-bottom: 2px solid var(--ink);
   padding-bottom: 10px;
@@ -100,6 +100,14 @@ h2 {
   color: var(--muted);
 }
 .item { margin-top: 8px; }
+.item, section, .skill-grid {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+h2 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
 .row {
   display: flex;
   justify-content: space-between;
@@ -148,7 +156,7 @@ li {
   color: var(--muted);
 }
 @media print {
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 12mm 14mm; }
   body {
     background: #fff;
     -webkit-print-color-adjust: exact;
@@ -156,11 +164,24 @@ li {
   }
   .toolbar { display: none; }
   .page {
-    width: 210mm;
-    min-height: 297mm;
+    width: auto;
+    min-height: 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
   }
+  .header { margin-bottom: 11px; }
+  .sheet {
+    min-height: 0;
+    break-after: page;
+    page-break-after: always;
+  }
+  .sheet:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  section { margin-top: 10px; }
+  .item { margin-top: 7px; }
 }
 @media (max-width: 760px) {
   .page {
@@ -189,6 +210,7 @@ li {
 </div>
 
 <main class="page">
+  <div class="sheet">
   <header class="header">
     <h1>Thanantron Jittrapirom</h1>
     <div class="title">Senior Software Engineer</div>
@@ -224,6 +246,9 @@ li {
         <li>Develop the myAIS 2.0 mobile application with Flutter using clean-code and event-driven architecture.</li>
         <li>Responsible for payment and billing features in a high-traffic telecom service application.</li>
         <li>Build maintainable UI with Atomic Design and manage application state with Bloc.</li>
+        <li>Support and mentor junior developers in the team, including implementation guidance and technical direction.</li>
+        <li>Plan feature-level development solutions, break down implementation tasks and align delivery approach with requirements.</li>
+        <li>Review code, validate implementation quality and help maintain engineering standards across the team.</li>
         <li>Write and maintain unit tests and functional tests for production features.</li>
       </ul>
     </div>
@@ -268,7 +293,9 @@ li {
       </ul>
     </div>
   </section>
+  </div>
 
+  <div class="sheet">
   <section>
     <h2>Selected Projects</h2>
     <div class="item">
@@ -353,6 +380,7 @@ li {
       <div class="edu-sub">Secondary Education</div>
     </div>
   </section>
+  </div>
 </main>
 
 </body>
