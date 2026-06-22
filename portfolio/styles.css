@@ -583,10 +583,13 @@ section { position: relative; padding: 130px 0; }
    DOCK NAV
    ============================================================ */
 .dock {
-  position: fixed; bottom: 26px; left: 50%; translate: -50% 0; z-index: 50;
+  position: fixed; bottom: 26px; left: 50%; transform: translate3d(-50%, 0, 0); z-index: 50;
+  inline-size: max-content; max-inline-size: calc(100vw - 24px); box-sizing: border-box;
   display: flex; gap: 6px; padding: 9px; border-radius: 999px;
   background: rgba(10,16,32,.7); backdrop-filter: blur(16px);
   border: 1px solid var(--line-2); box-shadow: var(--shadow), 0 0 30px -10px rgba(34,211,238,.4);
+  contain: layout paint;
+  will-change: transform;
 }
 .dock a {
   width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
@@ -789,7 +792,7 @@ section { position: relative; padding: 130px 0; }
   .tl-co { align-items: flex-start; font-size: 13px; }
   .tl-list li { font-size: 13.5px; }
   .cpu-bg { width: 440px; max-width: none; right: -250px; bottom: 20vh; opacity: .13; }
-  .dock { bottom: 16px; gap: 2px; padding: 7px; max-width: calc(100vw - 24px); }
+  .dock { bottom: 16px; gap: 2px; padding: 7px; max-inline-size: calc(100vw - 24px); }
   .dock a { width: 38px; height: 38px; }
   .dock a svg { width: 19px; height: 19px; }
   #ai-panel { right: 12px; bottom: 76px; width: calc(100vw - 24px); height: min(560px, calc(100vh - 104px)); }
