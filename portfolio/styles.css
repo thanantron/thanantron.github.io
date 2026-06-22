@@ -37,7 +37,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
@@ -227,7 +227,9 @@ section { position: relative; padding: 130px 0; }
 .hero-sub {
   font-family: var(--mono); font-size: 16px; color: var(--ink-soft);
   margin: 26px 0 18px; border-left: 2px solid var(--cyan); padding-left: 14px;
+  max-width: 100%; overflow-wrap: anywhere;
 }
+.hero-sub .typed { display: inline; overflow-wrap: anywhere; word-break: break-word; }
 .hero-sub .typed::after { content: "▌"; color: var(--cyan); animation: blink 1s steps(1) infinite; margin-left: 2px; }
 .hero p.lede { color: var(--ink-soft); font-size: 18px; max-width: 480px; }
 
@@ -704,7 +706,8 @@ section { position: relative; padding: 130px 0; }
   .hero-sub { font-size: 13.5px; line-height: 1.5; }
   .hero p.lede, .about p, .contact p { font-size: 16px; }
   .hero-cta { gap: 12px; margin-top: 30px; }
-  .btn { width: 100%; justify-content: center; padding: 14px 22px; font-size: 15px; }
+  .btn { width: min(100%, 100%); max-width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; }
+  .hero-cta .btn { flex: 1 1 100%; min-width: 0; }
   .hero-visual { min-height: 340px; overflow: visible; }
   .avatar { width: min(250px, 66vw); height: min(250px, 66vw); }
   .orbit-ring.r1 { width: min(330px, 86vw); height: min(330px, 86vw); }
